@@ -2,9 +2,12 @@
   "name": "node-metrics",
   "version": "1.0.0",
   "description": "Simple web API to work on metrics",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/ts-node src/server.ts",
+    "build": "./node_modules/.bin/tsc -p tsconfig.json",
+    "dev": "./node_modules/.bin/nodemon"
   },
   "repository": {
     "type": "git",
@@ -22,8 +25,15 @@
     "url": "https://github.com/AlexHff/node-metrics/issues"
   },
   "homepage": "https://github.com/AlexHff/node-metrics#readme",
-  "dependencies": {},
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "level": "^6.0.0",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
   "devDependencies": {
+    "@types/node": "^12.12.14",
     "nodemon": "^2.0.1"
   }
 }
