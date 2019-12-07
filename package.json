@@ -1,0 +1,25 @@
+{
+  "name": "node-metrics",
+  "version": "1.0.0",
+  "description": "Simple web API to work on metrics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexHff/node-metrics.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "express",
+    "leveldb"
+  ],
+  "author": "Alexander Hoffmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexHff/node-metrics/issues"
+  },
+  "homepage": "https://github.com/AlexHff/node-metrics#readme"
+}
