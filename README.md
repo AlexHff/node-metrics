@@ -58,7 +58,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* [**Alexander Hoffmann**](alexander.hoffmann@edu.ece.fr)
+* [**Alexander Hoffmann**](AlexHff)
 
 ## License
 
