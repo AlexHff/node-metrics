@@ -10,27 +10,32 @@ Simple web API to work on metrics
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+To build and run this app locally you will need Node.js
 
-Give examples
+### Quick start
 
-### Installing
+Clone the repository
+```bash
+git clone https://github.com/AlexHff/node-metrics.git
+cd node-metrics
+```
 
-A step by step series of examples that tell you how to get a development env running
+Install dependencies
+```bash
+npm install
+```
 
-Say what the step will be
+Build and run the project
+```bash
+npm run build
+npm start
+```
 
-Give the example
-
-And repeat
-
-until finished
-
-End with an example of getting some data out of the system or using it for a little demo
+Finally, navigate to `http://localhost:8000` and you should see the project being served and rendered locally.
 
 ## Running the tests
 
@@ -54,13 +59,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [Express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
+* [EJS](https://ejs.co/) - Embedded JavaScript templating
+* [Level](https://github.com/Level/level) - Fast & simple storage
 
 ## Authors
 
