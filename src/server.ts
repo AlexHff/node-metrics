@@ -1,24 +1,16 @@
-import express = require('express');
-import path = require('path');
+import app from "./app";
 
-const app = express();
-const port: string = process.env.PORT || '8080';
-app.use(express.static(path.join(__dirname, '/../public')));
-
-app.set('views', __dirname + "/../views");
-app.set('view engine', 'ejs');
-
-app.get('/', (req: any, res: any) => {
-  res.write('Hello world');
-  res.end();
-})
-
-app.get('/hello/:name', (req: any, res: any) => {
-  res.render('hello.ejs', {name: req.params.name});
+/**
+ * Start Express server.
+ */
+const server = app.listen(app.get("port"), () => {
+  console.log(
+    "  App is running at http://localhost:%d in %s mode",
+    app.get("port"),
+    app.get("env")
+  );
+  console.log("  Press CTRL-C to stop\n");
 });
 
-app.listen(port, (err: Error) => {
-  if (err) throw err;
-  console.log(`Server is running on http://localhost:${port}`);
-});
+export default server;
 
