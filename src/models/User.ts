@@ -1,5 +1,5 @@
 import db from "../db";
-import bcrypt from "bcrypt";
+import bcrypt, { hash } from "bcrypt";
 
 export class User {
   username: string;
@@ -16,6 +16,10 @@ export class User {
   static getFromDB(username: string, value: any): User {
     const [password, email] = value.split(":");
     return new User(username, email, password);
+  }
+
+  public verifyPassword(tryPassword: string): boolean {
+    return bcrypt.compareSync(tryPassword, this.password);
   }
 }
 
@@ -40,4 +44,3 @@ export class UserHandler {
     })
   }
 }
-

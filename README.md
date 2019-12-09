@@ -1,4 +1,5 @@
 # node-metrics
+[![Build Status](https://travis-ci.com/AlexHff/node-metrics.svg?token=qewhLzzy4xorKFhMwTS6&branch=master)](https://travis-ci.com/AlexHff/node-metrics)
 
 Simple web API to work on metrics
 
@@ -65,7 +66,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* [**Alexander Hoffmann**](AlexHff)
+* [**Alexander Hoffmann**](https://github.com/AlexHff)
 
 ## License
 
