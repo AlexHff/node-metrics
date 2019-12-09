@@ -1,27 +1,26 @@
 import express from "express";
+import expressLayouts from "express-ejs-layouts";
 import path from "path";
 import dotenv from "dotenv";
-import { User } from "./models/User";
+import bodyParser from "body-parser";
+
+import * as indexController from "./controllers/index";
+import * as userController from "./controllers/user";
 
 dotenv.config();
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(expressLayouts);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set("port", process.env.PORT);
-app.set("view engine", "ejs");
+app.set("port", process.env.PORT || 8000);
 app.set("views", path.join(__dirname, "../views"));
+app.set("view engine", "ejs");
 
-app.get("/", (req: any, res: any) => {
-  res.write('Hello world');
-  new User("alex", "alex@google.com", "1234");
-  res.end();
-});
-
-app.get("/hello/:name", (req: any, res: any) => {
-  res.render("hello.ejs", {name: req.params.name});
-});
+app.get("/", indexController.index);
+app.get("/login", userController.getLogin);
 
 export default app;
-

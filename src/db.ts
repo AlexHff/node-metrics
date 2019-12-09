@@ -5,9 +5,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 var dbPath = process.env.DB_PATH;
-var options = {    
-  keyEncoding: "binary",  
-  valueEncoding: "json"  
+var options = {
+    keyEncoding: "binary",
+    valueEncoding: "json"
 };
 var db = level(dbPath, options);
 
