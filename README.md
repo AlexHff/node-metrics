@@ -1,5 +1,4 @@
-# node-metrics
-[![Build Status](https://travis-ci.com/AlexHff/node-metrics.svg?token=qewhLzzy4xorKFhMwTS6&branch=master)](https://travis-ci.com/AlexHff/node-metrics)
+# node-metrics [![Build Status](https://travis-ci.com/AlexHff/node-metrics.svg?token=qewhLzzy4xorKFhMwTS6&branch=master)](https://travis-ci.com/AlexHff/node-metrics)
 
 Simple web API to work on metrics
 
