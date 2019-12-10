@@ -117,3 +117,7 @@ dist/
 node_modules/
 aws-exports.js
 awsconfiguration.json
+
+# leveldb dump
+ldb_out.json
+leveldump.py
