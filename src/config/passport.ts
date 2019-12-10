@@ -23,10 +23,8 @@ passport.use(new LocalStrategy({ usernameField: "username" }, (username, passwor
         if (!user) {
             return done(undefined, false, { message: `Username ${username} not found.` });
         }
-        console.log(password);
         user.comparePassword(password, (err: Error, isMatch: boolean) => {
             if (err) return done(err);
-            console.log(isMatch);
             if (isMatch) {
                 return done(undefined, user);
             }

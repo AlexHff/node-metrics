@@ -9,6 +9,7 @@ import * as indexController from "./controllers/index";
 import * as userController from "./controllers/user";
 
 import * as passportConfig from "./config/passport";
+import { UserHandler, User } from "./models/User";
 
 dotenv.config();
 
@@ -29,5 +30,21 @@ app.get("/", indexController.index);
 app.get("/login", userController.getLogin);
 app.post("/login", userController.postLogin);
 app.get("/user", passportConfig.isAuthenticated, userController.getProfile);
+
+app.get("/test", (req: any, res: any) => {
+    const handler = new UserHandler();
+    handler.save(new User("bob", "bob@google.com", "1234"), (err: Error | null) => {
+        if (err) throw err
+    });
+    handler.get("bob", (err, user: any) => {
+        if (err) throw err;
+        console.log(user);
+    });
+    handler.get("friedrich", (err, user: any) => {
+        if (err) throw err;
+        console.log(user);
+    });
+    res.end();
+});
 
 export default app;

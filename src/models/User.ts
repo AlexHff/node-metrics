@@ -1,15 +1,21 @@
 import db from "../db";
 import bcrypt, { hash } from "bcrypt";
 
+const bcryptRegex = /^\$2[ayb]\$.{56}$/;
+
 export class User {
     username: string;
     email: string;
-    password: string;
+    password: string = "";
 
     constructor(username: string, email: string, password: string) {
         this.username = username;
         this.email = email;
-        this.password = bcrypt.hashSync(password, 10);
+        if (bcryptRegex.test(password)) {
+            this.password = password;
+        } else {
+            this.password = bcrypt.hashSync(password, 10);
+        }
     }
 
     static getFromDB(username: string, value: any): User {
