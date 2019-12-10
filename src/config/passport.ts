@@ -1,6 +1,5 @@
 import passport from "passport";
 import passportLocal from "passport-local";
-import bcrypt from "bcrypt";
 
 import { UserHandler } from "../models/User";
 
@@ -8,7 +7,7 @@ const LocalStrategy = passportLocal.Strategy;
 const handler = new UserHandler();
 
 passport.serializeUser<any, any>((user, done) => {
-    done(undefined, user.username);
+    done(null, user.username);
 });
 
 passport.deserializeUser((username: string, done) => {
@@ -21,14 +20,14 @@ passport.use(new LocalStrategy({ usernameField: "username" }, (username, passwor
     handler.get(username, (err, user: any) => {
         if (err) return done(err);
         if (!user) {
-            return done(undefined, false, { message: `Username ${username} not found.` });
+            return done(null, false, { message: "Username does not exist." });
         }
         user.comparePassword(password, (err: Error, isMatch: boolean) => {
-            if (err) return done(err);
+            if (err) { return done(err); }
             if (isMatch) {
-                return done(undefined, user);
+                return done(null, user, { message: "Sucess." });
             }
-            return done(undefined, false, { message: "Invalid username or password." });
+            return done(null, false, { message: "Invalid email or password." });
         });
     });
 }));

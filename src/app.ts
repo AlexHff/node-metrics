@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import passport from "passport";
 import levelSession from "level-session-store";
 import session from "express-session";
+import flash from "express-flash";
 
 import * as indexController from "./controllers/index";
 import * as userController from "./controllers/user";
@@ -30,6 +31,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.set("port", process.env.PORT || 8000);
 app.set("views", path.join(__dirname, "../views"));
@@ -38,6 +40,9 @@ app.set("view engine", "ejs");
 app.get("/", indexController.index);
 app.get("/login", userController.getLogin);
 app.post("/login", userController.postLogin);
+app.get("/logout", userController.logout);
+app.get("/signup", userController.getSignup);
+app.post("/signup", userController.postSignup);
 app.get("/user", passportConfig.isAuthenticated, userController.getProfile);
 
 app.get("/test", (req: any, res: any) => {

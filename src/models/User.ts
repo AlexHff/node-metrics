@@ -33,8 +33,7 @@ export class User {
 export class UserHandler {
     public get(username: string, callback: (err: Error | null, result?: User) => void) {
         db.get(`user:${username}`, function (err: Error, data: any) {
-            if (err) callback(err);
-            else if (data == undefined) callback(null, data);
+            if (err) return callback(err);
             callback(null, User.getFromDB(username, data));
         });
     }
