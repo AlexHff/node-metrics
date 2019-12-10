@@ -4,6 +4,8 @@ import path from "path";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import passport from "passport";
+import levelSession from "level-session-store";
+import session from "express-session";
 
 import * as indexController from "./controllers/index";
 import * as userController from "./controllers/user";
@@ -14,11 +16,18 @@ import { UserHandler, User } from "./models/User";
 dotenv.config();
 
 const app = express();
+const levelStore = levelSession(session);
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(expressLayouts);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+    resave: true,
+    saveUninitialized: true,
+    secret: "secret",
+    store: new levelStore("./db/sessions")
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 

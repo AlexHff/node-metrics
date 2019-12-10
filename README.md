@@ -62,6 +62,7 @@ Add additional notes about how to deploy this on a live system
 * [Express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
 * [EJS](https://ejs.co/) - Embedded JavaScript templating
 * [Level](https://github.com/Level/level) - Fast & simple storage
+* [Passport](http://www.passportjs.org/docs/) - Authentication middleware for Node
 
 ## Authors
 

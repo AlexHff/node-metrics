@@ -14,7 +14,7 @@ passport.serializeUser<any, any>((user, done) => {
 passport.deserializeUser((username: string, done) => {
     handler.get(username, (err, user) => {
         done(err, user);
-    })
+    });
 });
 
 passport.use(new LocalStrategy({ usernameField: "username" }, (username, password, done) => {
