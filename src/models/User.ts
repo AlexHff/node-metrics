@@ -1,16 +1,21 @@
 import db from "../db";
 import bcrypt, { hash } from "bcrypt";
 
+const bcryptRegex = /^\$2[ayb]\$.{56}$/;
+
 export class User {
     username: string;
     email: string;
-    password: string;
+    password: string = "";
 
     constructor(username: string, email: string, password: string) {
         this.username = username;
         this.email = email;
-        this.password = bcrypt.hashSync(password, 10);
-        console.log(this);
+        if (bcryptRegex.test(password)) {
+            this.password = password;
+        } else {
+            this.password = bcrypt.hashSync(password, 10);
+        }
     }
 
     static getFromDB(username: string, value: any): User {
@@ -18,8 +23,10 @@ export class User {
         return new User(username, email, password);
     }
 
-    public verifyPassword(tryPassword: string): boolean {
-        return bcrypt.compareSync(tryPassword, this.password);
+    public comparePassword(candidatePassword: string, callback: (err: any, isMatch: any) => void) {
+        bcrypt.compare(candidatePassword, this.password, (err: Error, isMatch: boolean) => {
+            callback(err, isMatch);
+        });
     }
 }
 
@@ -41,6 +48,6 @@ export class UserHandler {
     public delete(username: string, callback: (err: Error | null) => void) {
         db.del(`user:${username}`, function (err: Error) {
             if (err) callback(err);
-        })
+        });
     }
 }
