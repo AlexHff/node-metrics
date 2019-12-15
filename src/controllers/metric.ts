@@ -28,3 +28,16 @@ export const getMetric = (req: any, res: any) => {
         });
     });
 };
+
+export const getNewMetric = (req: any, res: any) => {
+    res.render("metric/new");
+};
+
+export const postNewMetric = (req: any, res: any) => {
+    const metric = new Metric(0, req.body.value, req.user.username);
+    handler.save(metric, (err) => {
+        res.render("metric/one", {
+            metric: metric
+        });
+    });
+};
