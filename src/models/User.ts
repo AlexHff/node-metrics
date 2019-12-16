@@ -1,5 +1,5 @@
 import db from "../db";
-import bcrypt, { hash } from "bcrypt";
+import bcrypt from "bcrypt";
 
 const bcryptRegex = /^\$2[ayb]\$.{56}$/;
 

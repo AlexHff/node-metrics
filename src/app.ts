@@ -10,9 +10,10 @@ import flash from "express-flash";
 
 import * as indexController from "./controllers/index";
 import * as userController from "./controllers/user";
+import * as metricController from "./controllers/metric";
 
 import * as passportConfig from "./config/passport";
-import { UserHandler, User } from "./models/User";
+import { Metric, MetricHandler } from "./models/Metric";
 
 dotenv.config();
 
@@ -44,19 +45,20 @@ app.get("/logout", userController.logout);
 app.get("/signup", userController.getSignup);
 app.post("/signup", userController.postSignup);
 app.get("/user", passportConfig.isAuthenticated, userController.getProfile);
+app.get("/metric", passportConfig.isAuthenticated, metricController.getAllMetrics);
+app.get("/metric/:id", passportConfig.isAuthenticated, metricController.getMetric);
+app.get("/new", passportConfig.isAuthenticated, metricController.getNewMetric);
+app.post("/new", passportConfig.isAuthenticated, metricController.postNewMetric);
+app.post("/update", passportConfig.isAuthenticated, metricController.postUpdateMetric);
+app.post("/delete", passportConfig.isAuthenticated, metricController.postDeleteMetric);
 
 app.get("/test", (req: any, res: any) => {
-    const handler = new UserHandler();
-    handler.save(new User("bob", "bob@google.com", "1234"), (err: Error | null) => {
-        if (err) throw err
-    });
-    handler.get("bob", (err, user: any) => {
+    const handler = new MetricHandler();
+    handler.save(new Metric(0, 1, req.user.username), (err: Error | null) => {
         if (err) throw err;
-        console.log(user);
     });
-    handler.get("friedrich", (err, user: any) => {
+    handler.get(req.user.username, "1576007372", (err, metric: any) => {
         if (err) throw err;
-        console.log(user);
     });
     res.end();
 });
