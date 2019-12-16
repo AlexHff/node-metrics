@@ -1,14 +1,14 @@
 {
     "metricsenv": {
         "awscloudformation": {
-            "AuthRoleName": "node-metrics-metricsenv-20191210175406-authRole",
-            "UnauthRoleArn": "arn:aws:iam::523857292082:role/node-metrics-metricsenv-20191210175406-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::523857292082:role/node-metrics-metricsenv-20191210175406-authRole",
+            "AuthRoleName": "node-metrics-metricsenv-20191217000627-authRole",
+            "UnauthRoleArn": "arn:aws:iam::523857292082:role/node-metrics-metricsenv-20191217000627-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::523857292082:role/node-metrics-metricsenv-20191217000627-authRole",
             "Region": "eu-west-1",
-            "DeploymentBucketName": "node-metrics-metricsenv-20191210175406-deployment",
-            "UnauthRoleName": "node-metrics-metricsenv-20191210175406-unauthRole",
-            "StackName": "node-metrics-metricsenv-20191210175406",
-            "StackId": "arn:aws:cloudformation:eu-west-1:523857292082:stack/node-metrics-metricsenv-20191210175406/adc5ad60-1b6d-11ea-b503-0655dfaca74c"
+            "DeploymentBucketName": "node-metrics-metricsenv-20191217000627-deployment",
+            "UnauthRoleName": "node-metrics-metricsenv-20191217000627-unauthRole",
+            "StackName": "node-metrics-metricsenv-20191217000627",
+            "StackId": "arn:aws:cloudformation:eu-west-1:523857292082:stack/node-metrics-metricsenv-20191217000627/b136c930-2058-11ea-a081-0a2c3f6a2a32"
         }
     }
 }

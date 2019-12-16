@@ -106,6 +106,10 @@ dist
 # Database
 db/
 
+# leveldb dump
+ldb_out.json
+leveldump.py
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -117,7 +121,3 @@ dist/
 node_modules/
 aws-exports.js
 awsconfiguration.json
-
-# leveldb dump
-ldb_out.json
-leveldump.py

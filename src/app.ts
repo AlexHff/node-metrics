@@ -8,12 +8,21 @@ import levelSession from "level-session-store";
 import session from "express-session";
 import flash from "express-flash";
 
+// Routes methods
 import * as indexController from "./controllers/index";
 import * as userController from "./controllers/user";
 import * as metricController from "./controllers/metric";
 
+// Passport
 import * as passportConfig from "./config/passport";
 import { Metric, MetricHandler } from "./models/Metric";
+
+// Amplify
+import API from '@aws-amplify/api'
+import PubSub from '@aws-amplify/pubsub';
+import awsconfig from './aws-exports';
+API.configure(awsconfig);
+PubSub.configure(awsconfig);
 
 dotenv.config();
 
