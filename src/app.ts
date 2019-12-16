@@ -49,6 +49,8 @@ app.get("/metric", passportConfig.isAuthenticated, metricController.getAllMetric
 app.get("/metric/:id", passportConfig.isAuthenticated, metricController.getMetric);
 app.get("/new", passportConfig.isAuthenticated, metricController.getNewMetric);
 app.post("/new", passportConfig.isAuthenticated, metricController.postNewMetric);
+app.post("/update", passportConfig.isAuthenticated, metricController.postUpdateMetric);
+app.post("/delete", passportConfig.isAuthenticated, metricController.postDeleteMetric);
 
 app.get("/test", (req: any, res: any) => {
     const handler = new MetricHandler();

@@ -57,5 +57,6 @@ export class MetricHandler {
         db.del(`metric:${metric.username}:${metric.timestamp}`, function (err: Error) {
             if (err) callback(err);
         });
+        callback(null);
     }
 }
