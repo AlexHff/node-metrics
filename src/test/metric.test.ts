@@ -11,6 +11,13 @@ describe("Metric", function() {
                 else done();
             });
         });
+        it("should update without error", function(done) {
+            const metric = new Metric(1576572333, 888, "friedrich");
+            handler.save(metric, (err) => {
+                if (err) done(err);
+                else done();
+            });
+        });
     });
 
     describe("#get()", function() {
@@ -18,6 +25,12 @@ describe("Metric", function() {
             handler.get("friedrich", "1576572333", (err, metric: any) => {
                 if (err) done(err);
                 else done();
+            });
+        });
+        it("should throw error if data does not exist", function(done) {
+            handler.get("friedrich", "1576572333", (err, metric: any) => {
+                if (err) done();
+                else done(err);
             });
         });
     });
