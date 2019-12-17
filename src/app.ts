@@ -36,7 +36,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.set("port", process.env.PORT || 8000);
+app.set("port", process.env.PORT || 8081);
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "ejs");
 
