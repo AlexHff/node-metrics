@@ -9,7 +9,7 @@ describe("User", function() {
             handler.save(user, (err) => {
                 if (err) done(err);
                 else done();
-            })
+            });
         });
     });
 
