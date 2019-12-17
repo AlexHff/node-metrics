@@ -17,13 +17,6 @@ import * as metricController from "./controllers/metric";
 import * as passportConfig from "./config/passport";
 import { Metric, MetricHandler } from "./models/Metric";
 
-// Amplify
-import API from '@aws-amplify/api'
-import PubSub from '@aws-amplify/pubsub';
-import awsconfig from './aws-exports';
-API.configure(awsconfig);
-PubSub.configure(awsconfig);
-
 dotenv.config();
 
 const app = express();
