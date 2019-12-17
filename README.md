@@ -35,7 +35,7 @@ npm run build
 npm start
 ```
 
-Finally, navigate to `http://localhost:8000` and you should see the project being served and rendered locally.
+Finally, navigate to `http://localhost:8081` and you should see the project being served and rendered locally.
 
 ## Running the tests
 

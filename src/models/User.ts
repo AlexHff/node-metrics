@@ -46,7 +46,7 @@ export class UserHandler {
 
     public delete(username: string, callback: (err: Error | null) => void) {
         db.del(`user:${username}`, function (err: Error) {
-            if (err) callback(err);
+            callback(err);
         });
     }
 }
