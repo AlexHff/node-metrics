@@ -16,7 +16,6 @@ export class Metric {
         }
         this.value = value;
         this.username = username;
-        console.log(this);
     }
 
     static getFromDB(username: string, timestamp: string, value: any): Metric {
