@@ -20,6 +20,12 @@ describe("User", function() {
                 else done();
             });
         });
+        it("should return an error", function(done) {
+            handler.get("BOBO", (err) => {
+                if (err) done();
+                else done(err);
+            });
+        });
     });
 
     describe("#delete()", function() {
@@ -27,15 +33,6 @@ describe("User", function() {
             handler.delete("Bob", (err) => {
                 if (err) done(err);
                 else done();
-            });
-        });
-    });
-
-    describe("#getInexistant()", function() {
-        it("should return KeyNotFound error", function(done) {
-            handler.get("Bob", (err) => {
-                if (err) done();
-                else done(err);
             });
         });
     });

@@ -22,7 +22,7 @@ dotenv.config();
 const app = express();
 const levelStore = levelSession(session);
 
-//app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../public")));
 app.use(expressLayouts);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
