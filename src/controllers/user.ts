@@ -57,6 +57,7 @@ export const getSignup = (req: any, res: any) => {
     if (req.user) {
         return res.redirect("/");
     }
+    
     res.render("signup");
 };
 
@@ -79,7 +80,6 @@ export const postSignup = (req: any, res: any, next: any) => {
             if (err) return next(err);
             req.logIn(user, (err: Error) => {
                 if (err) return next(err);
-                res.redirect("/");
             });
         });
     });
