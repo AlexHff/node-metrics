@@ -1,2 +1,25 @@
 <h1>All metrics</h1>
 <%- JSON.stringify(metrics) %>
+<canvas id="myChart"></canvas>
+<script>
+    var metrics = <%- JSON.stringify(metrics) %>;
+    var timestamps = [], values = [];
+    for (let i = 0; i < metrics.length; i++) {
+        timestamps.push(metrics[i].timestamp);
+        values.push(metrics[i].value);
+    }
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: timestamps,
+            datasets: [{
+                label: 'My metrics',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: values
+            }]
+        },
+        options: {}
+    });
+</script>

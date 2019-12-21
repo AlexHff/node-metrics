@@ -29,6 +29,11 @@ Install dependencies
 npm install
 ```
 
+Populate database
+```bash
+npm run populate
+```
+
 Build and run the project
 ```bash
 npm run build
@@ -39,7 +44,10 @@ Finally, navigate to `http://localhost:8081` and you should see the project bein
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Run unit tests
+```bash
+npm test
+```
 
 ### Break down into end to end tests
 
