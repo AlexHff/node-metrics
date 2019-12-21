@@ -8,14 +8,13 @@ import levelSession from "level-session-store";
 import session from "express-session";
 import flash from "express-flash";
 
-// Routes methods
+// Routes
 import * as indexController from "./controllers/index";
 import * as userController from "./controllers/user";
 import * as metricController from "./controllers/metric";
 
 // Passport
 import * as passportConfig from "./config/passport";
-import { Metric, MetricHandler } from "./models/Metric";
 
 dotenv.config();
 

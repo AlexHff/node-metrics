@@ -41,7 +41,7 @@ export class MetricHandler {
 
     public get(username: string, timestamp: string, callback: (err: Error | null, result?: Metric) => void) {
         db.get(`metric:${username}:${timestamp}`, function (err: Error, data: any) {
-            if (err) callback(err);
+            if (err) return callback(err);
             callback(null, Metric.getFromDB(username, timestamp, data));
         });
     }

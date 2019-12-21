@@ -24,10 +24,7 @@ export const getAllMetrics = (req: any, res: any) => {
  */
 export const getMetric = (req: any, res: any, next: any) => {
     handler.get(req.user.username, req.params.id, (err, metric: any) => {
-        console.log(metric);
-        console.log(err);
         if (err) return res.redirect("/");
-        //if (err) return next(err);
         res.render("metric/one", {
             metric: metric
         });
