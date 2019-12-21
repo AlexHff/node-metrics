@@ -78,7 +78,8 @@ Add additional notes about how to deploy this on a live system
 * [**Alexander Hoffmann**](https://github.com/AlexHff)
 * [**Hugo Fougeres**](https://github.com/LaGereFou)
 * [**Jeremy Roca**](https://github.com/jeremyroca)
-For more information, see the [CONTRIBUTORS](CONTRIBUTORS.MD) file
+
+For more information, see the [CONTRIBUTORS](CONTRIBUTORS.md) file
 
 ## License
 
