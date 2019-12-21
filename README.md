@@ -1,5 +1,9 @@
 # node-metrics [![Build Status](https://travis-ci.com/AlexHff/node-metrics.svg?token=qewhLzzy4xorKFhMwTS6&branch=master)](https://travis-ci.com/AlexHff/node-metrics)
 
+<p align="center">
+<a href="http://crack.wenger-systems.com/">http://crack.wenger-systems.com/</a>
+</p>
+
 Simple web API to work on metrics
 
 ## Features
@@ -65,7 +69,29 @@ npm test
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This application has been deployed to an Elastic Beanstalk environment on AWS.
+
+### Deploy a Container with a Dockerfile
+
+Use the Elastic Beanstalk CLI (EB CLI) to configure your local repository for deployment to Elastic Beanstalk.
+
+```bash
+eb init -p docker <application-name>
+```
+
+After testing your application locally, deploy it to an Elastic Beanstalk environment. Elastic Beanstalk uses the instructions in your Dockerfile to build and run the image.
+
+Use the EB CLI to create an environment and deploy your application.
+
+```bash
+eb create <environment-name>
+```
+
+Once your environment has launched, use eb open to view it in a web browser.
+
+```bash
+eb open
+```
 
 ## Built With
 
