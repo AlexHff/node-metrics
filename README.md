@@ -71,10 +71,14 @@ Add additional notes about how to deploy this on a live system
 * [EJS](https://ejs.co/) - Embedded JavaScript templating
 * [Level](https://github.com/Level/level) - Fast & simple storage
 * [Passport](http://www.passportjs.org/docs/) - Authentication middleware for Node
+* [Chart.js](https://www.chartjs.org/docs/latest/) - Simple yet flexible JavaScript charting
 
 ## Authors
 
 * [**Alexander Hoffmann**](https://github.com/AlexHff)
+* [**Hugo Fougeres**](https://github.com/LaGereFou)
+* [**Jeremy Roca**](https://github.com/jeremyroca)
+For more information, see the [CONTRIBUTORS](CONTRIBUTORS.MD) file
 
 ## License
 
@@ -82,6 +86,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
+* [**Sergei Kudinov**](https://github.com/sergkudinov) for providing valuable pieces of code related to this project
 
