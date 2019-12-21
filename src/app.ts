@@ -54,15 +54,4 @@ app.post("/new", passportConfig.isAuthenticated, metricController.postNewMetric)
 app.post("/update", passportConfig.isAuthenticated, metricController.postUpdateMetric);
 app.post("/delete", passportConfig.isAuthenticated, metricController.postDeleteMetric);
 
-app.get("/test", (req: any, res: any) => {
-    const handler = new MetricHandler();
-    handler.save(new Metric(0, 1, req.user.username), (err: Error | null) => {
-        if (err) throw err;
-    });
-    handler.get(req.user.username, "1576007372", (err, metric: any) => {
-        if (err) throw err;
-    });
-    res.end();
-});
-
 export default app;
