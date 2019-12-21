@@ -49,18 +49,6 @@ Run unit tests
 npm test
 ```
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-Give an example
-
-### And coding style tests
-
-Explain what these tests test and why
-
-Give an example
-
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
@@ -84,6 +72,22 @@ For more information, see the [CONTRIBUTORS](CONTRIBUTORS.md) file
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Routes
+
+* GET / Displays the homepage
+* GET /login Displays the login form
+* POST /login Logs the user in
+* GET /logout Signs out the current out
+* GET /signup Displays the signup form
+* POST /signup Adds a user
+* GET /user Gets the current user
+* GET /metric Gets all metrics
+* GET /metric/:id Gets a metric given an id
+* GET /new Displays the form to add a new metric
+* POST /new Adds a new metric
+* POST /update Updates an existing metric
+* POST /delete Deletes a metric
 
 ## Acknowledgments
 

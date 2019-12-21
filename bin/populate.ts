@@ -12,7 +12,10 @@ const metrics = [
     new Metric(1576926491, 2, "friedrich"),
     new Metric(1576926492, 3, "friedrich"),
     new Metric(1576926493, 4, "jeremy"),
-    new Metric(1576926494, 5, "hugo")
+    new Metric(1576926494, 5, "hugo"),
+    new Metric(1576926495, 6, "hugo"),
+    new Metric(1576926496, 7, "hugo"),
+    new Metric(1576926497, 8, "hugo")
 ];
 
 const userHandler = new UserHandler();
