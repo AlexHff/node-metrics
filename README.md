@@ -1,7 +1,7 @@
 # node-metrics [![Build Status](https://travis-ci.com/AlexHff/node-metrics.svg?token=qewhLzzy4xorKFhMwTS6&branch=master)](https://travis-ci.com/AlexHff/node-metrics)
 
 <p align="center">
-<a href="http://crack.wenger-systems.com/">http://crack.wenger-systems.com/</a>
+<a href="https://crack.wenger-systems.com/">https://crack.wenger-systems.com/</a>
 </p>
 
 Simple web API to work on metrics
