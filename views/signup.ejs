@@ -1,19 +1,36 @@
-<form action="/signup" method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="username" />
-        <br />
+<%- contentFor('page') %>
+<!-- Content Row -->
+<div class="row">
+    <!-- Login -->
+    <div class="col-xl-8 col-lg-7">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Sign up</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <form action="/signup" method="post">
+                    <div>
+                        <label>Username:</label>
+                        <input type="text" name="username" required="required" />
+                        <br />
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <input type="email" name="email" required="required" />
+                        <br />
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" name="password" required="required" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+                Already have an account? <a href="/login">Log in!</a>
+            </div>
+        </div>
     </div>
-    <div>
-        <label>Email:</label>
-        <input type="email" name="email" />
-        <br />
-    </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password" />
-    </div>
-    <div>
-        <input type="submit" value="Submit" />
-    </div>
-</form>
+</div>

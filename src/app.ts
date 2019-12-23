@@ -48,7 +48,6 @@ app.post("/signup", userController.postSignup);
 app.get("/user", passportConfig.isAuthenticated, userController.getProfile);
 app.get("/metric", passportConfig.isAuthenticated, metricController.getAllMetrics);
 app.get("/metric/:id", passportConfig.isAuthenticated, metricController.getMetric);
-app.get("/new", passportConfig.isAuthenticated, metricController.getNewMetric);
 app.post("/new", passportConfig.isAuthenticated, metricController.postNewMetric);
 app.post("/update", passportConfig.isAuthenticated, metricController.postUpdateMetric);
 app.post("/delete", passportConfig.isAuthenticated, metricController.postDeleteMetric);

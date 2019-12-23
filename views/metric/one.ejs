@@ -1,18 +1,76 @@
-<%- JSON.stringify(metric) %>
-<form action="/update" method="post">
-    <div>
-        <label>Value:</label>
-        <input type="text" name="value" />
-        <br />
+<%- contentFor('page') %>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">My metric</h1>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+
+    <!-- Card -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Timestamp</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><%- metric.timestamp %></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <input type="hidden" name="timestamp" value="<%= metric.timestamp %>" />
-        <input type="submit" value="Submit" />
+
+    <!-- Card -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Value</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><%- metric.value %></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
-<form action="/delete" method="post">
-    <div>
-        <input type="hidden" name="timestamp" value="<%= metric.timestamp %>" />
-        <input type="submit" value="Delete" />
+
+    <!-- Update -->
+    <div class="col-xl-8 col-lg-7">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Update metric</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <form action="/update" method="post">
+                    <div>
+                        <label>Value:</label>
+                        <input type="text" name="value" required="required" />
+                        <br />
+                    </div>
+                    <div>
+                        <input type="hidden" name="timestamp" value="<%= metric.timestamp %>" />
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+                <form action="/delete" method="post">
+                    <div>
+                        <input type="hidden" name="timestamp" value="<%= metric.timestamp %>" />
+                        <input type="submit" value="Delete" />
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</form>
+</div>
+<!-- /.container-fluid -->

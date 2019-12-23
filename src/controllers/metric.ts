@@ -12,6 +12,7 @@ export const getAllMetrics = (req: any, res: any) => {
     handler.getAll(req.user.username, (err, metrics: any) => {
         if (err) return res.redirect("/");
         res.render("metric/all", {
+            user: req.user,
             metrics: metrics
         });
     });
@@ -26,19 +27,10 @@ export const getMetric = (req: any, res: any, next: any) => {
     handler.get(req.user.username, req.params.id, (err, metric: any) => {
         if (err) return res.redirect("/");
         res.render("metric/one", {
+            user: req.user,
             metric: metric
         });
     });
-};
-
-/**
- * GET /metric/new
- * Form to insert a new metric
- * @param req 
- * @param res 
- */
-export const getNewMetric = (req: any, res: any) => {
-    res.render("metric/new");
 };
 
 /**
@@ -51,6 +43,7 @@ export const postNewMetric = (req: any, res: any) => {
     const metric = new Metric(0, req.body.value, req.user.username);
     handler.save(metric, (err) => {
         res.render("metric/one", {
+            user: req.user,
             metric: metric
         });
     });
@@ -69,6 +62,7 @@ export const postUpdateMetric = (req: any, res: any, next: any) => {
         metric.value = req.body.value || "";
         handler.save(metric, (err) => {
             res.render("metric/one", {
+                user: req.user,
                 metric: metric
             });
         });

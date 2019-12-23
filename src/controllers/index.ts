@@ -5,5 +5,7 @@
  * @param res 
  */
 export const index = (req: any, res: any) => {
-    res.render("index");
+    res.render("index", {
+        user: req.user
+    });
 };

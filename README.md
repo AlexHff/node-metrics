@@ -124,7 +124,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * GET /user Gets the current user
 * GET /metric Gets all metrics
 * GET /metric/:id Gets a metric given an id
-* GET /new Displays the form to add a new metric
 * POST /new Adds a new metric
 * POST /update Updates an existing metric
 * POST /delete Deletes a metric
@@ -132,4 +131,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 * [**Sergei Kudinov**](https://github.com/sergkudinov) for providing valuable pieces of code related to this project
+* [**startbootstrap-sb-admin-2**](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2) for the admin dashboard template
 

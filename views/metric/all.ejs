@@ -1,6 +1,91 @@
-<h1>All metrics</h1>
-<%- JSON.stringify(metrics) %>
-<canvas id="myChart"></canvas>
+<%- contentFor('page') %>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">My metrics</h1>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+
+    <!-- Card -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total number of metrics</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><%- metrics.length %></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Add a new metric</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            <form action="/new" method="post">
+                                <div>
+                                    <input type="text" name="value" required="required" />
+                                    <input type="submit" value="Submit" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="col-xl-8 col-lg-7">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Metrics Overview</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- List -->
+    <div class="col-xl-8 col-lg-7">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Metrics List</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <ul>
+                    <% for (var i = 0; i < metrics.length; i++) { %>
+                    <li>
+                        <a href="/metric/<%= metrics[i].timestamp %>">
+                            <%= metrics[i].timestamp %> - <%= metrics[i].value %>
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
 <script>
     var metrics = <%- JSON.stringify(metrics) %>;
     var timestamps = [], values = [];

@@ -13,7 +13,9 @@ export const getLogin = (req: any, res: any) => {
     if (req.user) {
         return res.redirect("/");
     }
-    res.render("login");
+    res.render("login", {
+        user: req.user
+    });
 };
 
 /**
@@ -58,7 +60,9 @@ export const getSignup = (req: any, res: any) => {
         return res.redirect("/");
     }
     
-    res.render("signup");
+    res.render("signup", {
+        user: req.user
+    });
 };
 
 /**
@@ -92,5 +96,7 @@ export const postSignup = (req: any, res: any, next: any) => {
  * @param res 
  */
 export const getProfile = (req: any, res: any) => {
-    res.render("user/profile");
+    res.render("user/profile", {
+        user: req.user
+    });
 };
