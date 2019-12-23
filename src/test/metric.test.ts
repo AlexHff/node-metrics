@@ -11,6 +11,13 @@ describe("Metric", function() {
                 else done();
             });
         });
+        it("should save without error given no timestamp", function(done) {
+            const metric = new Metric(0, 1000, "friedrich");
+            handler.save(metric, (err) => {
+                if (err) done(err);
+                else done();
+            });
+        });
         it("should update without error", function(done) {
             const metric = new Metric(1576572333, 888, "friedrich");
             handler.save(metric, (err) => {

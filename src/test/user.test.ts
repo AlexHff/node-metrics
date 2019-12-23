@@ -28,6 +28,27 @@ describe("User", function() {
         });
     });
 
+    describe("#comparePassword()", function() {
+        it("should return true", function(done) {
+            handler.get("Bob", (err, user) => {
+                if (err) done(err);
+                user?.comparePassword("1234", (err, isMatch) => {
+                    if (err || !isMatch) done(err);
+                    else done();
+                })
+            });
+        });
+        it("should return false", function(done) {
+            handler.get("Bob", (err, user) => {
+                if (err) done(err);
+                user?.comparePassword("4321", (err, isMatch) => {
+                    if (err || isMatch) done(err);
+                    else done();
+                })
+            });
+        });
+    });
+
     describe("#delete()", function() {
         it("should delete without error", function(done) {
             handler.delete("Bob", (err) => {
