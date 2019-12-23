@@ -7,7 +7,8 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "moduleResolution": "node",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "sourceMap": true
   },
   "include": [
     "src/**/*"
