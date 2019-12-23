@@ -100,3 +100,24 @@ export const getProfile = (req: any, res: any) => {
         user: req.user
     });
 };
+
+/**
+ * POST /user
+ * Update user
+ * @param req 
+ * @param res 
+ * @param next 
+ */
+export const postUpdateProfile = (req: any, res: any, next: any) => {
+    handler.get(req.user.username, (err, user: any) => {
+        if (err) return next(err);
+        user.email = req.body.email;
+        handler.save(user, (err) => {
+            if (err) return next(err);
+            req.logIn(user, (err: Error) => {
+                if (err) return next(err);
+                res.redirect("/user");
+            });
+        });
+    });
+};
