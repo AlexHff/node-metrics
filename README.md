@@ -115,18 +115,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Routes
 
-* GET / Displays the homepage
-* GET /login Displays the login form
-* POST /login Logs the user in
-* GET /logout Signs out the current out
-* GET /signup Displays the signup form
-* POST /signup Adds a user
-* GET /user Gets the current user
-* GET /metric Gets all metrics
-* GET /metric/:id Gets a metric given an id
-* POST /new Adds a new metric
-* POST /update Updates an existing metric
-* POST /delete Deletes a metric
+
+| Method | Route | Description |
+| - | - | - |
+| GET | / | Displays the homepage |
+| GET | /login | Displays the login form |
+| POST | /login | Logs the user in |
+| GET | /logout | Signs out the current out |
+| GET | /signup | Displays the signup form |
+| POST | /signup | Adds a user |
+| GET | /user | Gets the current user |
+| GET | /metric | Gets all metrics |
+| GET | /metric/:id | Gets a metric given an id |
+| POST | /new | Adds a new metric |
+| POST | /update | Updates an existing metric |
+| POST | /delete | Deletes a metric |
 
 ## Acknowledgments
 
