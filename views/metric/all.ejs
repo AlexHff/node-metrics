@@ -26,7 +26,7 @@
     </div>
 
     <!-- Card -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="col-xl-5 col-md-6 mb-4">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -36,7 +36,7 @@
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <form action="/new" method="post">
                                 <div>
-                                    <input type="text" name="value" required="required" />
+                                    <input type="number" name="value" required="required" />
                                     <input type="submit" value="Submit" />
                                 </div>
                             </form>
@@ -57,7 +57,7 @@
             <!-- Card Body -->
             <div class="card-body">
                 <div class="chart-area">
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart" height="100"></canvas>
                 </div>
             </div>
         </div>
