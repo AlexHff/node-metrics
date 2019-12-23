@@ -10,7 +10,9 @@ node-metrics contributors (sorted alphabetically)
 * **[Hugo FOUGERES](https://github.com/LaGereFou)**
 
   * Frontend developper
+  * DevOps
 
 * **[Jeremy ROCA](https://github.com/jeremyroca)**
 
   * Frontend developper
+  * DevOps
