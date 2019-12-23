@@ -1,4 +1,4 @@
-# node-metrics [![Build Status](https://travis-ci.com/AlexHff/node-metrics.svg?token=qewhLzzy4xorKFhMwTS6&branch=master)](https://travis-ci.com/AlexHff/node-metrics) [![Coverage Status](https://coveralls.io/repos/github/AlexHff/node-metrics/badge.svg?branch=master)](https://coveralls.io/github/AlexHff/node-metrics?branch=master)
+# node-metrics [![Build Status](https://travis-ci.com/AlexHff/node-metrics.svg?token=qewhLzzy4xorKFhMwTS6&branch=master)](https://travis-ci.com/AlexHff/node-metrics) [![Coverage Status](https://coveralls.io/repos/github/AlexHff/node-metrics/badge.svg?branch=master)](https://coveralls.io/github/AlexHff/node-metrics?branch=master) [![HitCount](http://hits.dwyl.io/AlexHff/node-metrics.svg)](http://hits.dwyl.io/AlexHff/node-metrics)
 
 <p align="center">
 <a href="https://crack.wenger-systems.com/">https://crack.wenger-systems.com/</a>
